@@ -5,6 +5,7 @@
 * Quick summary
 * Version
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+
 An android application which tracks workouts, specifically PHUL.
 
 ### How do I get set up? ###
