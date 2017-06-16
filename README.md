@@ -16,4 +16,5 @@ An android application which tracks workouts, specifically PHUL.
 
 ### Who do I talk to? ###
 Author: Michael Bartido
+
 Email: jamberjong@gmail.com
