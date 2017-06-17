@@ -8,12 +8,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.support.v7.app.ActionBar;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ListView myList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,5 +55,23 @@ public class MainActivity extends AppCompatActivity {
         ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         // Set newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
+
+        // List View stuff
+        myList = (ListView) findViewById(R.id.recipe_list_view);
+        final ArrayList<String> list = new ArrayList();
+        list.add("Week 1");
+        list.add("Week 2");
+        list.add("Week 3");
+        final WeekAdapter adapter = new WeekAdapter(this, list);
+        myList.setAdapter(adapter);
+
+        // Add button
+        final Button button = (Button) findViewById(R.id.add_button);
+        button.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                list.add("Another week");
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 }
