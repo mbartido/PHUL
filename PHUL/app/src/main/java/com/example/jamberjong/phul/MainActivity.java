@@ -76,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences("PREFS", 0);
         String wordsString = settings.getString("words", "");
         // Gets weeks from words
-        String[] weeks = wordsString.split(",");
+        String[] week = wordsString.split(",");
         final ArrayList<String> list = new ArrayList<String>();
-        // Adds each week to the list
-        for (int i = 0; i < weeks.length; i++){
-            list.add(weeks[i]);
+        // Adds each day to the list
+        for (int i = 0; i < week.length; i++){
+            list.add(week[i]);
         }
         // Set adapter so you can view the list
         final WeekAdapter adapter = new WeekAdapter(this, list);

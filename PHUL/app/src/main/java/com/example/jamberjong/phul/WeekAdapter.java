@@ -49,9 +49,19 @@ public class WeekAdapter extends BaseAdapter {
                 (TextView) rowView.findViewById(R.id.week_list_text);
 
         // Set the text of the row
-        String week = (String) getItem(position);
-        titleTextView.setText("Week " + position);
-        textView.setText("This is week " + position);
+        //String week = (String) getItem(position);
+        titleTextView.setText("Day " + position);
+        int mod = position % 4;
+        if(mod == 0) {
+            textView.setText("Upper Power");
+        } else if (mod == 1) {
+            textView.setText("Lower Power");
+        } else if (mod == 2) {
+            textView.setText("Upper Hypertrophy");
+        } else {
+            textView.setText("Lower Hypertrophy");
+        //textView.setText("This is week " + position);
+        }
 
         // Font stuff for title
         Typeface titleTypeFace =
