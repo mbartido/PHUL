@@ -13,12 +13,12 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class UpperPower extends AppCompatActivity {
+public class UpperHypertrophy extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upper_power);
+        setContentView(R.layout.activity_upper_hypertrophy);
 
         // Gets the action bar
         ActionBar ab = getSupportActionBar();
@@ -48,7 +48,7 @@ public class UpperPower extends AppCompatActivity {
         // Set newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
 
-        TextView title = (TextView) findViewById(R.id.upperPowerTitle);
+        TextView title = (TextView) findViewById(R.id.upperHypertrophyTitle);
         Typeface titleTypeface = Typeface.createFromAsset(getAssets(), "fonts/DroidSans-Bold.ttf");
         title.setTypeface(titleTypeface);
         title.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);

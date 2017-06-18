@@ -16,7 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UpperPower"></activity>
+        <activity android:name=".UpperPower" />
+        <activity android:name=".LowerPower" />
+        <activity android:name=".UpperHypertrophy" />
+        <activity android:name=".LowerHypertrophy"></activity>
     </application>
 
 </manifest>

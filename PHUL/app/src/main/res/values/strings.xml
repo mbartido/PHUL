@@ -5,4 +5,10 @@
     <string name="delete">DELETE</string>
     <string name="upperPowerTitle">Upper Power</string>
     <string name="upperPower">Upper Power</string>
+    <string name="lowerPowerTitle">Lower Power</string>
+    <string name="lowerPower">Lower Power</string>
+    <string name="upperHypertrophyTitle">Upper Hypertrophy</string>
+    <string name="upperHypertrophy">Upper Hypertrophy</string>
+    <string name="lowerHypertrophyTitle">Lower Hypertrophy</string>
+    <string name="lowerHypertrophy">Lower Hypertrophy</string>
 </resources>

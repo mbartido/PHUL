@@ -97,9 +97,25 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), clicked, Toast.LENGTH_SHORT).show();
 
                 // Go to new activity
-                if ((pos%4) == 1){
+                // Go to upper power activity
+                if ((pos%4) == 1) {
                     Intent upperPower = new Intent(MainActivity.this, UpperPower.class);
                     startActivity(upperPower);
+                    finish();
+                // Go to lower power activity
+                } else if ((pos%4) == 2){
+                    Intent lowerPower = new Intent(MainActivity.this, LowerPower.class);
+                    startActivity(lowerPower);
+                    finish();
+                // Go to upper hypertrophy activity
+                } else if ((pos%4) == 3){
+                    Intent upperHypertrophy = new Intent(MainActivity.this, UpperHypertrophy.class);
+                    startActivity(upperHypertrophy);
+                    finish();
+                // Go to lower hypertrophy activity
+                } else {
+                    Intent lowerHypertrophy = new Intent(MainActivity.this, LowerHypertrophy.class);
+                    startActivity(lowerHypertrophy);
                     finish();
                 }
             }
