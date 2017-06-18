@@ -3,4 +3,6 @@
     <string name="week_list_text">Text</string>
     <string name="add">ADD</string>
     <string name="delete">DELETE</string>
+    <string name="upperPowerTitle">Upper Power</string>
+    <string name="upperPower">Upper Power</string>
 </resources>

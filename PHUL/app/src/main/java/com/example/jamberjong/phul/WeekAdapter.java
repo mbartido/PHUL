@@ -50,7 +50,7 @@ public class WeekAdapter extends BaseAdapter {
 
         // Set the text of the row
         //String week = (String) getItem(position);
-        titleTextView.setText("Day " + position);
+        titleTextView.setText("Day " + (position+1));
         int mod = position % 4;
         if(mod == 0) {
             textView.setText("Upper Power");

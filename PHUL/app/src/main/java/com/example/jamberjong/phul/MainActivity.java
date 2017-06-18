@@ -1,6 +1,7 @@
 package com.example.jamberjong.phul;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -90,9 +91,17 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
                 // Value of position clicked
                 int pos = (int) myList.getAdapter().getItemId(position);
+                pos = pos + 1;
                 // Display position in toast
                 String clicked = "Position " + pos + " clicked";
                 Toast.makeText(getApplicationContext(), clicked, Toast.LENGTH_SHORT).show();
+
+                // Go to new activity
+                if ((pos%4) == 1){
+                    Intent upperPower = new Intent(MainActivity.this, UpperPower.class);
+                    startActivity(upperPower);
+                    finish();
+                }
             }
         });
 
@@ -108,15 +117,16 @@ public class MainActivity extends AppCompatActivity {
                     stringBuilder.append(",");
                 }
                 // Adds one more to stringbuilder than previous list size
-                stringBuilder.append("Week " + list.size()+1);
+                stringBuilder.append("Day " + list.size()+1);
                 sharedpreferences = getSharedPreferences("PREFS", 0);
                 SharedPreferences.Editor editor = sharedpreferences.edit();
                 // Puts the newly added string to shared preferences
                 editor.putString("words", stringBuilder.toString());
                 editor.commit();
-                list.add("Week " + list.size()+1);
+                list.add("Day " + list.size()+1);
+                String added = "Added Day " + (list.size());
+                Toast.makeText(getApplicationContext(), added, Toast.LENGTH_SHORT).show();
                 adapter.notifyDataSetChanged();
-
             }
         });
 
@@ -143,6 +153,11 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
     }
 
 
