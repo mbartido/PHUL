@@ -84,13 +84,14 @@ public class MainActivity extends AppCompatActivity {
         final WeekAdapter adapter = new WeekAdapter(this, list);
         myList.setAdapter(adapter);
 
+
         // Add button
-        final Button button = (Button) findViewById(R.id.add_button);
-        button.setOnClickListener(new View.OnClickListener(){
+        final Button addButton = (Button) findViewById(R.id.add_button);
+        addButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 StringBuilder stringBuilder = new StringBuilder();
                 // Adds to string builder for every string in list
-                for (String s : list){
+                for (String s: list){
                     stringBuilder.append(s);
                     stringBuilder.append(",");
                 }
@@ -102,9 +103,32 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString("words", stringBuilder.toString());
                 editor.commit();
                 list.add("Week " + list.size()+1);
-                //list.add("Another week");
                 adapter.notifyDataSetChanged();
 
+            }
+        });
+
+        // Delete Button
+        final Button delButton = (Button) findViewById(R.id.delete_button);
+        delButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                // Don't do anything if the list size is 0
+                if (list.size() == 0) return;
+                // Remove last element from list
+                list.remove(list.size()-1);
+                // Add to string builder from list with removed element
+                StringBuilder stringBuilder = new StringBuilder();
+                for (String s: list){
+                    stringBuilder.append(s);
+                    stringBuilder.append(",");
+                }
+                // Shared preferences stuff
+                sharedpreferences = getSharedPreferences("PREFS", 0);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                // Puts new week string to shared preferences
+                editor.putString("words", stringBuilder.toString());
+                editor.commit();
+                adapter.notifyDataSetChanged();
             }
         });
     }
