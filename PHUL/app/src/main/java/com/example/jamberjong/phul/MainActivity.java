@@ -1,8 +1,11 @@
 package com.example.jamberjong.phul;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.support.constraint.solver.SolverVariable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,11 +20,20 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.support.v7.app.ActionBar;
 
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.lang.reflect.Type;
+
+import static android.R.id.list;
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView myList;
+    public static final String TAG = "List";
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +70,17 @@ public class MainActivity extends AppCompatActivity {
 
         // List View stuff
         myList = (ListView) findViewById(R.id.recipe_list_view);
-        final ArrayList<String> list = new ArrayList();
-        list.add("Week 1");
-        list.add("Week 2");
-        list.add("Week 3");
+        // Shared preferences
+        SharedPreferences settings = getSharedPreferences("PREFS", 0);
+        String wordsString = settings.getString("words", "");
+        // Gets weeks from words
+        String[] weeks = wordsString.split(",");
+        final ArrayList<String> list = new ArrayList<String>();
+        // Adds each week to the list
+        for (int i = 0; i < weeks.length; i++){
+            list.add(weeks[i]);
+        }
+        // Set adapter so you can view the list
         final WeekAdapter adapter = new WeekAdapter(this, list);
         myList.setAdapter(adapter);
 
@@ -69,9 +88,27 @@ public class MainActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.add_button);
         button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                list.add("Another week");
+                StringBuilder stringBuilder = new StringBuilder();
+                // Adds to string builder for every string in list
+                for (String s : list){
+                    stringBuilder.append(s);
+                    stringBuilder.append(",");
+                }
+                // Adds one more to stringbuilder than previous list size
+                stringBuilder.append("Week " + list.size()+1);
+                sharedpreferences = getSharedPreferences("PREFS", 0);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                // Puts the newly added string to shared preferences
+                editor.putString("words", stringBuilder.toString());
+                editor.commit();
+                list.add("Week " + list.size()+1);
+                //list.add("Another week");
                 adapter.notifyDataSetChanged();
+
             }
         });
     }
+
+
+
 }
