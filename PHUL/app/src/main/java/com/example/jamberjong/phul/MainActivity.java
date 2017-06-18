@@ -13,12 +13,14 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.support.v7.app.ActionBar;
+import android.widget.Toast;
 
 import java.sql.Array;
 import java.util.ArrayList;
@@ -83,6 +85,16 @@ public class MainActivity extends AppCompatActivity {
         // Set adapter so you can view the list
         final WeekAdapter adapter = new WeekAdapter(this, list);
         myList.setAdapter(adapter);
+        myList.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
+                // Value of position clicked
+                int pos = (int) myList.getAdapter().getItemId(position);
+                // Display position in toast
+                String clicked = "Position " + pos + " clicked";
+                Toast.makeText(getApplicationContext(), clicked, Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         // Add button
