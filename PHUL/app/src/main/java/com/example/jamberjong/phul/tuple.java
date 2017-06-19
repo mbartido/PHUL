@@ -29,7 +29,7 @@ public class tuple {
         reps = _reps;
     }
 
-    public void debug(){
+    public void print(){
         Log.d("Tuple", "Weight: " + Integer.toString(weight));
         Log.d("Tuple", "Sets: " + Integer.toString(weight));
         Log.d("Tuple", "Reps: " + Integer.toString(reps));

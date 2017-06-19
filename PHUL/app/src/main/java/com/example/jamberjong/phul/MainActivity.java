@@ -10,6 +10,7 @@ import android.support.constraint.solver.SolverVariable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -82,8 +83,10 @@ public class MainActivity extends AppCompatActivity {
         String[] week = wordsString.split(",");
         final ArrayList<String> list = new ArrayList<String>();
         // Adds each day to the list
-        for (int i = 0; i < week.length; i++){
-            list.add(week[i]);
+        if (!week[0].equals("")) {         // if you have weeks to add
+            for (int i = 0; i < week.length; i++) {
+                list.add(week[i]);
+            }
         }
         // Set adapter so you can view the list
         final WeekAdapter adapter = new WeekAdapter(this, list);
