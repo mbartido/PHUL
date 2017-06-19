@@ -23,20 +23,22 @@ import android.widget.TextView;
 import android.support.v7.app.ActionBar;
 import android.widget.Toast;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.lang.reflect.Type;
-
-import static android.R.id.list;
 
 public class MainActivity extends AppCompatActivity {
 
     private ListView myList;
-    public static final String TAG = "List";
     SharedPreferences sharedpreferences;
+    // Array List of Array Lists for different exercises
+    // Important methods: add(Object o), clear(), get(int index),
+    // set(int index, Object element)
+    ArrayList<ArrayList<tuple>> upperPower;
+    ArrayList<ArrayList<tuple>> lowerPower;
+    ArrayList<ArrayList<tuple>> upperHyper;
+    ArrayList<ArrayList<tuple>> lowerHyper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
