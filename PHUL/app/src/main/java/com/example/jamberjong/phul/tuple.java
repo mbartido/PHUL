@@ -34,4 +34,8 @@ public class tuple {
         Log.d("Tuple", "Sets: " + Integer.toString(weight));
         Log.d("Tuple", "Reps: " + Integer.toString(reps));
     }
+
+    public String toString(){
+        return "(" + weight + "," + sets + "," + reps + ")";
+    }
 }
