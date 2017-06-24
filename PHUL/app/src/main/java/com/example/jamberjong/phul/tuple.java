@@ -15,17 +15,17 @@ public class tuple {
     }
 
     // Assign weight to _weight
-    public void exerWeight(int _weight){
+    public void setWeight(int _weight){
         weight = _weight;
     }
 
     // Assign sets to _sets
-    public void exerSets(int _sets){
+    public void setSets(int _sets){
         sets = _sets;
     }
 
     // Assign reps to _reps
-    public void exerReps(int _reps){
+    public void setReps(int _reps){
         reps = _reps;
     }
 
