@@ -10,10 +10,14 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class UpperPower extends AppCompatActivity {
+    private ListView upperList;   // Our List
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +51,22 @@ public class UpperPower extends AppCompatActivity {
         ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         // Set newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
-
+        // Sets text face
         TextView title = (TextView) findViewById(R.id.upperPowerTitle);
         Typeface titleTypeface = Typeface.createFromAsset(getAssets(), "fonts/DroidSans-Bold.ttf");
         title.setTypeface(titleTypeface);
         title.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);
+        /*
+        // List View stuff
+        upperList = (ListView) findViewById(R.id.workoutList_view);
+        final ArrayList<String> workoutList = new ArrayList<String>();
+        String[] listItems = new String[2];
+        for (int i = 0; i < 2; i++){
+            listItems[i] =
+        }
+        */
+
+
     }
 
     @Override
