@@ -66,8 +66,8 @@ public class UpperPower extends AppCompatActivity {
         }
         */
 
-        tuple tuple1 = new tuple(1, 2, 3);
-        tuple tuple2 = new tuple(4, 5, 6);
+        tuple tuple1 = new tuple("Penis", -2, -1, 1, 2, 3);
+        tuple tuple2 = new tuple("Vagina", 4, 5, 6, 7, 8);
         ArrayList<tuple> tupleList = new ArrayList<tuple>();
         tupleList.add(tuple1);
         tupleList.add(tuple2);

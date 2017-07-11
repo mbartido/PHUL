@@ -11,6 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,16 +57,23 @@ public class WorkoutAdapter extends BaseAdapter {
                 (EditText) rowView.findViewById(R.id.setsEdit);
         EditText reps =
                 (EditText) rowView.findViewById(R.id.repsEdit);
-        
-        // Sets text for text views
-        recSets.setText("recSets");
-        recReps.setText("recReps");
-        weight.setText("weight");
-        sets.setText("sets");
-        reps.setText("reps");
+
+        tuple item = myDataSource.get(position);
+        workoutNameView.setText(item.getWorkoutName());
+        String _recSets = Integer.toString(item.getRecSets());
+        String _recReps = Integer.toString(item.getRecReps());
+        String _weight = Integer.toString(item.getWeight());
+        String _sets = Integer.toString(item.getSets());
+        String _reps = Integer.toString(item.getReps());
+        recSets.setText(_recSets);
+        recReps.setText(_recReps);
+        weight.setText(_weight);
+        sets.setText(_sets);
+        reps.setText(_reps);
 
         Typeface textTypeface =
                 Typeface.createFromAsset(myContext.getAssets(), "fonts/BebasNeue Regular.ttf");
+        workoutNameView.setTypeface(textTypeface);
         recSets.setTypeface(textTypeface);
         recReps.setTypeface(textTypeface);
         weight.setTypeface(textTypeface);
