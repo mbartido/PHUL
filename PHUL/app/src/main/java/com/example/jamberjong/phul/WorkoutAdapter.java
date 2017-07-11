@@ -2,6 +2,7 @@ package com.example.jamberjong.phul;
 
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,11 +52,26 @@ public class WorkoutAdapter extends BaseAdapter {
                 (TextView) rowView.findViewById(R.id._recReps);
         EditText weight =
                 (EditText) rowView.findViewById(R.id.weightEdit);
-        Spinner sets =
-                (Spinner) rowView.findViewById(R.id.setsSpin);
-        Spinner reps =
-                (Spinner) rowView.findViewById(R.id.repsSpin);
+        EditText sets =
+                (EditText) rowView.findViewById(R.id.setsEdit);
+        EditText reps =
+                (EditText) rowView.findViewById(R.id.repsEdit);
         
+        // Sets text for text views
+        recSets.setText("recSets");
+        recReps.setText("recReps");
+        weight.setText("weight");
+        sets.setText("sets");
+        reps.setText("reps");
+
+        Typeface textTypeface =
+                Typeface.createFromAsset(myContext.getAssets(), "fonts/BebasNeue Regular.ttf");
+        recSets.setTypeface(textTypeface);
+        recReps.setTypeface(textTypeface);
+        weight.setTypeface(textTypeface);
+        sets.setTypeface(textTypeface);
+        reps.setTypeface(textTypeface);
+
         return rowView;
     }
 }

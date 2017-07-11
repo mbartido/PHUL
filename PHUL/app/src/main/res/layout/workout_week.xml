@@ -11,52 +11,58 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="Workout Name: "
-        android:textSize="17sp"/>
+        android:textSize="17sp"
+        android:layout_marginBottom="2dp"/>
 
     <TextView
         android:id="@+id/recSets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Recommended Sets: "
+        android:layout_below="@+id/workoutName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/workoutName"
-        android:text="Recommended Sets: "/>
+        android:layout_marginTop="1dp" />
 
     <TextView
         android:id="@+id/recReps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Recommended Reps: "
+        android:layout_below="@+id/recSets"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/recSets"
-        android:text="Recommended Reps: "/>
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:id="@+id/weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Weight"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/_recReps"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/recReps"
-        android:text="Weight"/>
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/sets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:text="Sets"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/weight"
-        android:text="Sets"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/reps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:text="Reps"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/sets"
-        android:text="Reps"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/weightEdit"
@@ -65,33 +71,41 @@
         android:ems="7"
         android:inputType="number"
         android:text="Name"
-        android:layout_marginLeft="30dp"
-        android:layout_marginStart="30dp"
+        android:textSize="14sp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:gravity="bottom"
         android:layout_below="@+id/recReps"
         android:layout_toRightOf="@+id/weight"
-        android:layout_above="@+id/setsSpin" />
+        android:layout_toEndOf="@+id/weight"
+        android:layout_alignBaseline="@+id/weight"/>
 
-    <Spinner
-        android:id="@+id/setsSpin"
+    <EditText
+        android:id="@+id/setsEdit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/weight"
-        android:layout_above="@+id/reps"
+        android:inputType="number"
+        android:textSize="14sp"
+        android:layout_alignRight="@+id/weightEdit"
+        android:layout_alignEnd="@+id/weightEdit"
+        android:layout_alignBottom="@+id/sets"
         android:layout_alignLeft="@+id/weightEdit"
         android:layout_alignStart="@+id/weightEdit"
-        android:layout_alignRight="@+id/weightEdit"
-        android:layout_alignEnd="@+id/weightEdit"/>
+        android:layout_below="@+id/weight"
+        android:layout_alignBaseline="@+id/sets"/>
 
-    <Spinner
-        android:id="@+id/repsSpin"
+    <EditText
+        android:id="@+id/repsEdit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sets"
-        android:layout_alignLeft="@+id/setsSpin"
-        android:layout_alignStart="@+id/setsSpin"
-        android:layout_alignRight="@+id/setsSpin"
-        android:layout_alignEnd="@+id/setsSpin"
-        android:layout_alignBottom="@+id/reps"/>
+        android:inputType="number"
+        android:textSize="14sp"
+        android:layout_alignTop="@+id/reps"
+        android:layout_alignLeft="@+id/setsEdit"
+        android:layout_alignStart="@+id/setsEdit"
+        android:layout_alignBaseline="@+id/reps"
+        android:layout_alignRight="@+id/setsEdit"
+        android:layout_alignEnd="@+id/setsEdit" />
 
     <TextView
         android:id="@+id/_workoutName"
@@ -100,25 +114,28 @@
         android:text="TextView"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/recReps"
-        android:layout_above="@+id/recSets"/>
+        android:layout_above="@+id/recSets"
+        android:layout_alignBaseline="@+id/workoutName"/>
 
     <TextView
         android:id="@+id/_recSets"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_below="@+id/_workoutName"
-        android:layout_alignLeft="@+id/_workoutName"
-        android:layout_alignStart="@+id/_workoutName"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
+        android:layout_alignBaseline="@+id/recSets"
+        android:layout_alignBottom="@+id/recSets"
+        android:layout_toRightOf="@+id/recReps"
+        android:layout_toEndOf="@+id/recReps"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
 
     <TextView
         android:id="@+id/_recReps"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:layout_below="@+id/_recSets"
+        android:layout_alignBaseline="@+id/recReps"
+        android:layout_alignBottom="@+id/recReps"
         android:layout_alignLeft="@+id/_recSets"
         android:layout_alignStart="@+id/_recSets" />
 

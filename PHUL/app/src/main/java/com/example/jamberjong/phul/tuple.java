@@ -25,9 +25,12 @@ public class tuple {
     }
 
     // Assign reps to _reps
-    public void setReps(int _reps){
-        reps = _reps;
-    }
+    public void setReps(int _reps){ reps = _reps; }
+
+    // Gets weight, sets, and reps
+    public int getWeight(){ return weight; }
+    public int getSets(){ return sets; }
+    public int getReps(){ return reps; }
 
     public void print(){
         Log.d("Tuple", "Weight: " + Integer.toString(weight));

@@ -66,7 +66,15 @@ public class UpperPower extends AppCompatActivity {
         }
         */
 
+        tuple tuple1 = new tuple(1, 2, 3);
+        tuple tuple2 = new tuple(4, 5, 6);
+        ArrayList<tuple> tupleList = new ArrayList<tuple>();
+        tupleList.add(tuple1);
+        tupleList.add(tuple2);
 
+        upperList = (ListView) findViewById(R.id.workoutList_view);
+        final WorkoutAdapter adapter = new WorkoutAdapter(this, tupleList);
+        upperList.setAdapter(adapter);
     }
 
     @Override
