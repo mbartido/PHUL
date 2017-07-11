@@ -60,13 +60,11 @@ public class WorkoutAdapter extends BaseAdapter {
 
         tuple item = myDataSource.get(position);
         workoutNameView.setText(item.getWorkoutName());
-        String _recSets = Integer.toString(item.getRecSets());
-        String _recReps = Integer.toString(item.getRecReps());
         String _weight = Integer.toString(item.getWeight());
         String _sets = Integer.toString(item.getSets());
         String _reps = Integer.toString(item.getReps());
-        recSets.setText(_recSets);
-        recReps.setText(_recReps);
+        recSets.setText(item.getRecSets());
+        recReps.setText(item.getRecReps());
         weight.setText(_weight);
         sets.setText(_sets);
         reps.setText(_reps);

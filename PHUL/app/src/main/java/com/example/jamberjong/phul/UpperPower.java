@@ -66,11 +66,21 @@ public class UpperPower extends AppCompatActivity {
         }
         */
 
-        tuple tuple1 = new tuple("Penis", -2, -1, 1, 2, 3);
-        tuple tuple2 = new tuple("Vagina", 4, 5, 6, 7, 8);
+        tuple tuple1 = new tuple("Barbell Bench Press", "3-4", "3-5", 0, 0, 0);
+        tuple tuple2 = new tuple("Incline Dumbell Bench Press", "3-4", "6-10", 0, 0, 0);
+        tuple tuple3 = new tuple("Bent Over Row", "3-4", "3-5", 0, 0, 0);
+        tuple tuple4 = new tuple("Lat Pull Down", "3-4", "6-10", 0, 0, 0);
+        tuple tuple5 = new tuple("Overhead Press", "2-3", "6-10", 0, 0, 0);
+        tuple tuple6 = new tuple("Barbell Curl", "2-3", "6-10", 0, 0, 0);
+        tuple tuple7 = new tuple("Skull Crusher", "2-3", "6-10", 0, 0, 0);
         ArrayList<tuple> tupleList = new ArrayList<tuple>();
         tupleList.add(tuple1);
         tupleList.add(tuple2);
+        tupleList.add(tuple3);
+        tupleList.add(tuple4);
+        tupleList.add(tuple5);
+        tupleList.add(tuple6);
+        tupleList.add(tuple7);
 
         upperList = (ListView) findViewById(R.id.workoutList_view);
         final WorkoutAdapter adapter = new WorkoutAdapter(this, tupleList);

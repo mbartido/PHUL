@@ -4,15 +4,15 @@ import android.util.Log;
 
 public class tuple {
     String workoutName;
-    int recSets;
-    int recReps;
+    String recSets;
+    String recReps;
     int weight;
     int sets;
     int reps;
 
 
     // constructor
-    public tuple(String _workoutName, int _recSets, int _recReps, int _weight, int _sets, int _reps){
+    public tuple(String _workoutName, String _recSets, String _recReps, int _weight, int _sets, int _reps){
         workoutName = _workoutName;
         recSets = _recSets;
         recReps = _recReps;
@@ -25,10 +25,10 @@ public class tuple {
     public void setWorkoutName(String _workoutName) { workoutName = _workoutName; }
 
     // Assign rec sets
-    public void setRecSets(int _recSets) { recSets = _recSets; }
+    public void setRecSets(String _recSets) { recSets = _recSets; }
 
     // Assign rec reps
-    public void setRecReps(int _recReps) { recReps = _recReps; }
+    public void setRecReps(String _recReps) { recReps = _recReps; }
 
     // Assign weight to _weight
     public void setWeight(int _weight){
@@ -45,8 +45,8 @@ public class tuple {
 
     // Gets weight, sets, and reps, and others
     public String getWorkoutName(){ return workoutName; }
-    public int getRecSets(){ return recSets; }
-    public int getRecReps(){ return recReps; }
+    public String getRecSets(){ return recSets; }
+    public String getRecReps(){ return recReps; }
     public int getWeight(){ return weight; }
     public int getSets(){ return sets; }
     public int getReps(){ return reps; }
