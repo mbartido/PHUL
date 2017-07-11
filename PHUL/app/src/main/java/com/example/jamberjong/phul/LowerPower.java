@@ -10,10 +10,14 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class LowerPower extends AppCompatActivity {
+    private ListView lowerList;    // Our List
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +51,27 @@ public class LowerPower extends AppCompatActivity {
         ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         // Set newly created TextView as ActionBar custom view
         ab.setCustomView(tv);
-
+        // Sets text face
         TextView title = (TextView) findViewById(R.id.lowerPowerTitle);
         Typeface titleTypeface = Typeface.createFromAsset(getAssets(), "fonts/DroidSans-Bold.ttf");
         title.setTypeface(titleTypeface);
         title.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30);
+
+        tuple tuple1 = new tuple("Squat", "3-4", "3-5", 0, 0, 0);
+        tuple tuple2 = new tuple("Deadlift", "3-4", "3-5", 0, 0, 0);
+        tuple tuple3 = new tuple("Leg Press", "3-5", "10-15", 0, 0, 0);
+        tuple tuple4 = new tuple("Leg Curl", "3-4", "6-10", 0, 0, 0);
+        tuple tuple5 = new tuple("Calf Ups", "4", "6-10", 0, 0, 0);
+        ArrayList<tuple> tupleList = new ArrayList<tuple>();
+        tupleList.add(tuple1);
+        tupleList.add(tuple2);
+        tupleList.add(tuple3);
+        tupleList.add(tuple4);
+        tupleList.add(tuple5);
+
+        lowerList = (ListView) findViewById(R.id.workoutList_view);
+        final WorkoutAdapter adapter = new WorkoutAdapter(this, tupleList);
+        lowerList.setAdapter(adapter);
     }
 
     @Override
