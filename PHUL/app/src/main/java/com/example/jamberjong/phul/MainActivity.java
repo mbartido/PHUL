@@ -32,6 +32,7 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity {
 
     private ListView myList;
+    private static final String TAG = "MyActivity";   // for debuggging
     SharedPreferences sharedpreferences;
     // Array List of Array Lists for different exercises
     // Important methods: add(Object o), clear(), get(int index),
@@ -100,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
                 // Display position in toast
                 String clicked = "Position " + pos + " clicked";
                 Toast.makeText(getApplicationContext(), clicked, Toast.LENGTH_SHORT).show();
+                // Remembering last position clicked
+                sharedpreferences = getSharedPreferences("PREFS", 0);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                String lastClicked = Integer.toString(pos);
+                editor.putString("lastClicked", lastClicked);
+                editor.commit();
 
                 // Go to new activity
                 // Go to upper power activity

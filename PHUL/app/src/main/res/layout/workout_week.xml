@@ -68,17 +68,16 @@
         android:id="@+id/weightEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="7"
-        android:inputType="number"
-        android:text="Name"
-        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/weight"
+        android:layout_below="@+id/recReps"
         android:layout_marginLeft="42dp"
         android:layout_marginStart="42dp"
-        android:gravity="bottom"
-        android:layout_below="@+id/recReps"
-        android:layout_toRightOf="@+id/weight"
         android:layout_toEndOf="@+id/weight"
-        android:layout_alignBaseline="@+id/weight"/>
+        android:layout_toRightOf="@+id/weight"
+        android:ems="7"
+        android:gravity="bottom"
+        android:inputType="number"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/setsEdit"

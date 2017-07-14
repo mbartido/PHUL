@@ -9,15 +9,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class UpperPower extends AppCompatActivity {
     private ListView upperList;   // Our List
+    //EditText edit1 = (EditText) findViewById(R.id.)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,11 +72,11 @@ public class UpperPower extends AppCompatActivity {
         */
 
         tuple tuple1 = new tuple("Barbell Bench Press", "3-4", "3-5", 0, 0, 0);
-        tuple tuple2 = new tuple("Incline Dumbell Bench Press", "3-4", "6-10", 0, 0, 0);
-        tuple tuple3 = new tuple("Bent Over Row", "3-4", "3-5", 0, 0, 0);
-        tuple tuple4 = new tuple("Lat Pull Down", "3-4", "6-10", 0, 0, 0);
-        tuple tuple5 = new tuple("Overhead Press", "2-3", "6-10", 0, 0, 0);
-        tuple tuple6 = new tuple("Barbell Curl", "2-3", "6-10", 0, 0, 0);
+        tuple tuple2 = new tuple("Incline Dumbell Bench Press", "3-4", "6-10", 1, 0, 0);
+        tuple tuple3 = new tuple("Bent Over Row", "3-4", "3-5", 2, 0, 0);
+        tuple tuple4 = new tuple("Lat Pull Down", "3-4", "6-10", 3, 0, 0);
+        tuple tuple5 = new tuple("Overhead Press", "2-3", "6-10", 4, 0, 0);
+        tuple tuple6 = new tuple("Barbell Curl", "2-3", "6-10", 5, 0, 0);
         tuple tuple7 = new tuple("Skull Crusher", "2-3", "6-10", 0, 0, 0);
         ArrayList<tuple> tupleList = new ArrayList<tuple>();
         tupleList.add(tuple1);
@@ -86,6 +91,8 @@ public class UpperPower extends AppCompatActivity {
         final WorkoutAdapter adapter = new WorkoutAdapter(this, tupleList);
         upperList.setAdapter(adapter);
     }
+
+
 
     @Override
     public void onBackPressed(){
