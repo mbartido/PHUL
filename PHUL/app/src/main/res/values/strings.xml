@@ -11,4 +11,26 @@
     <string name="upperHypertrophy">Upper Hypertrophy</string>
     <string name="lowerHypertrophyTitle">Lower Hypertrophy</string>
     <string name="lowerHypertrophy">Lower Hypertrophy</string>
+    <string name="action_settings">Other</string>
+    <string name="calcText">CALC</string>
+    <string name="weightLBS">0 LBS</string>
+    <string name="weightKGS">0 KGS</string>
+    <string name="weightCalcTitle">Weight Calculator</string>
+    <string name="Kg25Butt">25K</string>
+    <string name="Reset">RESET</string>
+    <string name="Kg20Butt">20K</string>
+    <string name="Kg15Butt">15K</string>
+    <string name="Kg10Butt">10K</string>
+    <string name="Kg5Butt">5.0K</string>
+    <string name="Kg2_5Butt">2.5K</string>
+    <string name="Kg2Butt">2.0K</string>
+    <string name="Kg1_5Butt">1.5K</string>
+    <string name="Kg1_0Butt">1.0K</string>
+    <string name="Kg0_5Butt">0.5K</string>
+    <string name="Lbs45">45l</string>
+    <string name="Lbs35">35l</string>
+    <string name="Lbs25">25l</string>
+    <string name="Lbs10">10l</string>
+    <string name="Lbs5">5.0L</string>
+    <string name="Lbs2_5">2.5l</string>
 </resources>

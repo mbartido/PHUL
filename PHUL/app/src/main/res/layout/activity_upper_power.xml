@@ -31,5 +31,21 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/upperPowerTitle" />
 
+    <Button
+        android:id="@+id/calcButton"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="35dp"
+        android:layout_marginLeft="143dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/calcText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workoutList_view"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </android.support.constraint.ConstraintLayout>

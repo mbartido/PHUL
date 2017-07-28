@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -90,6 +91,17 @@ public class UpperPower extends AppCompatActivity {
         upperList = (ListView) findViewById(R.id.workoutList_view);
         final WorkoutAdapter adapter = new WorkoutAdapter(this, tupleList);
         upperList.setAdapter(adapter);
+
+
+        // Calc button
+        final Button calcButton = (Button) findViewById(R.id.calcButton);
+        calcButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent calc = new Intent(UpperPower.this, Calculator.class);
+                startActivity(calc);
+                finish();
+            }
+        });
     }
 
 

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jamberjong.phul.Calculator">
+
+    <Button
+        android:id="@+id/lbs2_5"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:text="@string/Lbs2_5"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lbs25"
+        app:layout_constraintLeft_toRightOf="@+id/lbs25"
+        android:layout_marginLeft="16dp" />
+
+    <Button
+        android:id="@+id/lbs45"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/Lbs5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/lbs10" />
+
+    <Button
+        android:id="@+id/lbs10"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/Lbs10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/lbs25" />
+
+    <Button
+        android:id="@+id/lbs25"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/Lbs25"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/lbs35" />
+
+    <Button
+        android:id="@+id/lbs45"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="21dp"
+        android:text="@string/Lbs45"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ResetButton" />
+
+    <Button
+        android:id="@+id/kg5_0"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/Kg5Butt"
+        app:layout_constraintTop_toBottomOf="@+id/kg10"
+        app:layout_constraintLeft_toRightOf="@+id/lbs45"
+        android:layout_marginLeft="124dp" />
+
+    <Button
+        android:id="@+id/kg2_5"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/Kg2_5Butt"
+        app:layout_constraintLeft_toRightOf="@+id/kg25"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/kg25" />
+
+    <Button
+        android:id="@+id/kg10"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:text="@string/Kg10Butt"
+        app:layout_constraintLeft_toRightOf="@+id/lbs10"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/kg15" />
+
+    <Button
+        android:id="@+id/kg20"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:text="@string/Kg20Butt"
+        app:layout_constraintLeft_toRightOf="@+id/lbs35"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/kg25" />
+
+    <Button
+        android:id="@+id/kg15"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:text="@string/Kg15Butt"
+        android:layout_marginLeft="124dp"
+        app:layout_constraintLeft_toRightOf="@+id/lbs25"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/kg20" />
+
+    <TextView
+        android:id="@+id/calcTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/weightCalcTitle"
+        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:text="@string/weightLBS"
+        app:layout_constraintTop_toBottomOf="@+id/calcTitle"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/weightKGS"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/kg25"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:text="@string/Kg25Butt"
+        app:layout_constraintLeft_toRightOf="@+id/lbs45"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintTop_toBottomOf="@+id/ResetButton" />
+
+    <Button
+        android:id="@+id/ResetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Reset"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="34dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/kg2_0"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/Kg2Butt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/kg20"
+        app:layout_constraintLeft_toRightOf="@+id/kg20"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/kg1_5"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/Kg1_5Butt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/kg15"
+        app:layout_constraintLeft_toRightOf="@+id/kg15"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/kg1_0"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/Kg1_0Butt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/kg10"
+        app:layout_constraintLeft_toRightOf="@+id/kg10"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/kg0_5"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/Kg0_5Butt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/kg5_0"
+        app:layout_constraintLeft_toRightOf="@+id/kg5_0"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/lbs35"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/Lbs35"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/lbs45" />
+
+</android.support.constraint.ConstraintLayout>
