@@ -1,19 +1,27 @@
 package com.example.jamberjong.phul;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.view.ViewGroup.LayoutParams;
 
 public class Calculator extends AppCompatActivity {
 
@@ -21,10 +29,20 @@ public class Calculator extends AppCompatActivity {
     public double weight = 0;
     public double weightKG = 0;
 
+    private Context myContext;
+    private Activity myActivity;
+    private PopupWindow myPopUpWindow;
+    private ConstraintLayout constraintLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator);
+
+        // Context and activity
+        myContext = getApplicationContext();
+        myActivity = Calculator.this;
+        constraintLayout = (ConstraintLayout) findViewById(R.id.calc_layout);
 
         // Gets the action bar
         ActionBar ab = getSupportActionBar();
@@ -293,7 +311,35 @@ public class Calculator extends AppCompatActivity {
             }
         });
 
+        final Button history = (Button) findViewById(R.id.historyButton);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater inflater = (LayoutInflater) myContext.getSystemService(LAYOUT_INFLATER_SERVICE);
+                ViewGroup popupView = (ViewGroup) inflater.inflate(R.layout.pop_up, null);
 
+                myPopUpWindow = new PopupWindow(popupView, 800, 600, true);
+
+                // Elevate popup window
+                if (Build.VERSION.SDK_INT >= 21) {
+                    myPopUpWindow.setElevation(5.0f);
+                }
+
+                // To let window actually show
+                myPopUpWindow.showAtLocation(constraintLayout, Gravity.CENTER, 0, 0);
+
+                // For clicking anywhere to close window
+                // Will get a warning when touching to close but that is normal
+                popupView.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View view, MotionEvent motionEvent) {
+                        myPopUpWindow.dismiss();
+                        return true;
+                    }
+                });
+
+            }
+        });
     }
 
 
