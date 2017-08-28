@@ -17,7 +17,7 @@
 
     <Button
         android:id="@+id/lbs5"
-        android:layout_width="60dp"
+        android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="12dp"
@@ -27,7 +27,7 @@
 
     <Button
         android:id="@+id/lbs10"
-        android:layout_width="60dp"
+        android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginLeft="16dp"
         android:text="@string/Lbs10"
@@ -37,7 +37,7 @@
 
     <Button
         android:id="@+id/lbs25"
-        android:layout_width="60dp"
+        android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginLeft="16dp"
         android:text="@string/Lbs25"
@@ -47,13 +47,13 @@
 
     <Button
         android:id="@+id/lbs45"
-        android:layout_width="60dp"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Lbs45"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ResetButton" />
+        app:layout_constraintTop_toBottomOf="@+id/ResetButton"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/kg5_0"
@@ -63,18 +63,18 @@
         android:text="@string/Kg5Butt"
         app:layout_constraintTop_toBottomOf="@+id/kg10"
         app:layout_constraintLeft_toRightOf="@+id/lbs45"
-        android:layout_marginLeft="124dp" />
+        android:layout_marginLeft="94dp" />
 
     <Button
         android:id="@+id/kg2_5"
         android:layout_width="60dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="16dp"
         android:text="@string/Kg2_5Butt"
-        app:layout_constraintLeft_toRightOf="@+id/kg25"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBaseline_toBaselineOf="@+id/kg25" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/kg25"
+        app:layout_constraintLeft_toRightOf="@+id/kg25"
+        android:layout_marginLeft="8dp" />
 
     <Button
         android:id="@+id/kg10"
@@ -82,7 +82,7 @@
         android:layout_height="35dp"
         android:text="@string/Kg10Butt"
         app:layout_constraintLeft_toRightOf="@+id/lbs10"
-        android:layout_marginLeft="124dp"
+        android:layout_marginLeft="94dp"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@+id/kg15" />
 
@@ -92,8 +92,8 @@
         android:layout_height="35dp"
         android:text="@string/Kg20Butt"
         app:layout_constraintLeft_toRightOf="@+id/lbs35"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/kg25" />
 
     <Button
@@ -101,22 +101,21 @@
         android:layout_width="60dp"
         android:layout_height="35dp"
         android:text="@string/Kg15Butt"
-        android:layout_marginLeft="124dp"
+        android:layout_marginLeft="94dp"
         app:layout_constraintLeft_toRightOf="@+id/lbs25"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/kg20" />
 
     <TextView
         android:id="@+id/calcTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="26dp"
         android:text="@string/weightCalcTitle"
-        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -151,74 +150,91 @@
         android:layout_height="35dp"
         android:text="@string/Kg25Butt"
         app:layout_constraintLeft_toRightOf="@+id/lbs45"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/ResetButton" />
 
     <Button
         android:id="@+id/ResetButton"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Reset"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="34dp"
+        android:text="@string/Reset"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/kilograms" />
 
     <Button
         android:id="@+id/kg2_0"
         android:layout_width="60dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="16dp"
         android:text="@string/Kg2Butt"
         app:layout_constraintBaseline_toBaselineOf="@+id/kg20"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/kg20"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_marginLeft="8dp" />
 
     <Button
         android:id="@+id/kg1_5"
         android:layout_width="60dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="16dp"
         android:text="@string/Kg1_5Butt"
         app:layout_constraintBaseline_toBaselineOf="@+id/kg15"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/kg15"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_marginLeft="8dp" />
 
     <Button
         android:id="@+id/kg1_0"
         android:layout_width="60dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="16dp"
         android:text="@string/Kg1_0Butt"
         app:layout_constraintBaseline_toBaselineOf="@+id/kg10"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/kg10"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_marginLeft="8dp" />
 
     <Button
         android:id="@+id/kg0_5"
         android:layout_width="60dp"
         android:layout_height="35dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="16dp"
         android:text="@string/Kg0_5Butt"
         app:layout_constraintBaseline_toBaselineOf="@+id/kg5_0"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/kg5_0"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_marginLeft="8dp" />
 
     <Button
         android:id="@+id/lbs35"
-        android:layout_width="60dp"
+        android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginLeft="16dp"
         android:text="@string/Lbs35"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="12dp"
         app:layout_constraintTop_toBottomOf="@+id/lbs45" />
+
+    <Button
+        android:id="@+id/historyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:elevation="0dp"
+        android:text="HISTORY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kg0_5"
+        app:layout_constraintVertical_bias="0.473" />
 
 </android.support.constraint.ConstraintLayout>

@@ -77,12 +77,14 @@ public class Calculator extends AppCompatActivity {
             }
         });
 
+        /** Pounds Section *******************************************/
+
         // When you click 45L button
         final Button P45 = (Button) findViewById(R.id.lbs45);
         P45.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weight = weight + 45;
-                weightKG = weightKG + (weight *.453592);
+                weightKG = weight * 0.45359237;
                 weight = Math.round(weight * 100.0)/100.0;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -96,7 +98,7 @@ public class Calculator extends AppCompatActivity {
         P35.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weight = weight + 35;
-                weightKG = weightKG + (weight *.453592);
+                weightKG = weight * 0.45359237;
                 weight = Math.round(weight * 100.0)/100.0;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -110,7 +112,7 @@ public class Calculator extends AppCompatActivity {
         P25.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weight = weight + 25;
-                weightKG = weightKG + (weight *.453592);
+                weightKG = weight * 0.45359237;
                 weight = Math.round(weight * 100.0)/100.0;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -124,7 +126,7 @@ public class Calculator extends AppCompatActivity {
         P10.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weight = weight + 10;
-                weightKG = weightKG + (weight *.453592);
+                weightKG = weight * 0.45359237;
                 weight = Math.round(weight * 100.0)/100.0;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -138,7 +140,7 @@ public class Calculator extends AppCompatActivity {
         P5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weight = weight + 5;
-                weightKG = weightKG + (weight *.453592);
+                weightKG = weight * 0.45359237;
                 weight = Math.round(weight * 100.0)/100.0;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -151,7 +153,7 @@ public class Calculator extends AppCompatActivity {
         P2_5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weight = weight + 2.5;
-                weightKG = weightKG + (weight *.453592);
+                weightKG = weight * 0.45359237;
                 weight = Math.round(weight * 100.0)/100.0;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -159,12 +161,14 @@ public class Calculator extends AppCompatActivity {
             }
         });
 
+        /** Kilogram Section ********************************************/
+
         // When you click 25K button
         final Button K25 = (Button) findViewById(R.id.kg25);
         K25.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 25;
-                weight = weight + (25 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -177,7 +181,7 @@ public class Calculator extends AppCompatActivity {
         K20.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 20;
-                weight = weight + (20 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -190,7 +194,7 @@ public class Calculator extends AppCompatActivity {
         K15.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 15;
-                weight = weight + (15 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -203,7 +207,7 @@ public class Calculator extends AppCompatActivity {
         K10.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 10;
-                weight = weight + (10 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -216,7 +220,7 @@ public class Calculator extends AppCompatActivity {
         K5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 5;
-                weight = weight + (5 * 2.20462);
+                weight = weightKG / 0.45359237;;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -229,7 +233,7 @@ public class Calculator extends AppCompatActivity {
         K2_5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 2.5;
-                weight = weight + (2.5 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -242,7 +246,7 @@ public class Calculator extends AppCompatActivity {
         K2_0.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 2.0;
-                weight = weight + (2.0 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -255,7 +259,7 @@ public class Calculator extends AppCompatActivity {
         K1_5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 1.5;
-                weight = weight + (1.5 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -268,7 +272,7 @@ public class Calculator extends AppCompatActivity {
         K1_0.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 1.0;
-                weight = weight + (1.0 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
@@ -281,13 +285,14 @@ public class Calculator extends AppCompatActivity {
         K0_5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 weightKG = weightKG + 0.5;
-                weight = weight + (0.5 * 2.20462);
+                weight = weightKG / 0.45359237;
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
             }
         });
+
 
     }
 
