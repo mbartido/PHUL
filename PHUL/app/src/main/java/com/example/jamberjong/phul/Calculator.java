@@ -3,15 +3,19 @@ package com.example.jamberjong.phul;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.preference.PreferenceManager;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -26,13 +30,51 @@ import android.view.ViewGroup.LayoutParams;
 public class Calculator extends AppCompatActivity {
 
     // For our uses, weight is described in pounds
-    public double weight = 0;
-    public double weightKG = 0;
+    private double weight = 0;
+    private double weightKG = 0;
 
     private Context myContext;
     private Activity myActivity;
     private PopupWindow myPopUpWindow;
     private ConstraintLayout constraintLayout;
+
+    // Counters for number of times button is pressed
+    // Pounds
+    private int num45_l = 0;
+    private int num35_l = 0;
+    private int num25_l = 0;
+    private int num10_l = 0;
+    private int num5_0_l = 0;
+    private int num2_5_l = 0;
+    // Kilograms
+    private int num25_k = 0;
+    private int num20_k = 0;
+    private int num15_k = 0;
+    private int num10_k = 0;
+    private int num5_0_k = 0;
+    private int num2_5_k = 0;
+    private int num2_0_k = 0;
+    private int num1_5_k = 0;
+    private int num1_0_k = 0;
+    private int num0_5_k = 0;
+
+
+    // For saving the number of times button is pressed
+    public void saveInt(String key, int value) {
+        // getting shared preferences
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        // getting the editor
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(key, value);
+        editor.commit();
+    }
+
+    // Getting number of times button is pressed
+    public String getInt(String key) {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        int savedValue = sharedPreferences.getInt(key, 0);
+        return Integer.toString(savedValue);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +134,44 @@ public class Calculator extends AppCompatActivity {
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+
+                // Resetting counters
+                // Pounds
+                num45_l = 0;
+                num35_l = 0;
+                num25_l = 0;
+                num10_l = 0;
+                num5_0_l = 0;
+                num2_5_l = 0;
+                // Kilograms
+                num25_k = 0;
+                num20_k = 0;
+                num15_k = 0;
+                num10_k = 0;
+                num5_0_k = 0;
+                num2_5_k = 0;
+                num2_0_k = 0;
+                num1_5_k = 0;
+                num1_0_k = 0;
+                num0_5_k = 0;
+
+                // Setting textViews back to 0 in shared preferences
+                saveInt("num45_l", num45_l);
+                saveInt("num35_l", num35_l);
+                saveInt("num25_l", num25_l);
+                saveInt("num10_l", num10_l);
+                saveInt("num5_0_l", num5_0_l);
+                saveInt("num2_5_l", num2_5_l);
+                saveInt("num25_k", num25_k);
+                saveInt("num20_k", num20_k);
+                saveInt("num15_k", num15_k);
+                saveInt("num10_k", num10_k);
+                saveInt("num5_0_k", num5_0_k);
+                saveInt("num2_5_k", num2_5_k);
+                saveInt("num2_0_k", num2_0_k);
+                saveInt("num1_5_k", num1_5_k);
+                saveInt("num1_0_k", num1_0_k);
+                saveInt("num0_5_k", num0_5_k);
             }
         });
 
@@ -107,6 +187,8 @@ public class Calculator extends AppCompatActivity {
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num45_l += 1;
+                saveInt("num45_l", num45_l);
             }
 
         });
@@ -121,6 +203,8 @@ public class Calculator extends AppCompatActivity {
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num35_l += 1;
+                saveInt("num35_l", num35_l);
             }
 
         });
@@ -135,6 +219,8 @@ public class Calculator extends AppCompatActivity {
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num25_l += 1;
+                saveInt("num25_l", num25_l);
             }
 
         });
@@ -149,6 +235,8 @@ public class Calculator extends AppCompatActivity {
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num10_l += 1;
+                saveInt("num10_l", num10_l);
             }
 
         });
@@ -163,6 +251,8 @@ public class Calculator extends AppCompatActivity {
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num5_0_l += 1;
+                saveInt("num5_0_l", num5_0_l);
             }
         });
 
@@ -176,6 +266,8 @@ public class Calculator extends AppCompatActivity {
                 weightKG = Math.round(weightKG * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num2_5_l += 1;
+                saveInt("num2_5_l", num2_5_l);
             }
         });
 
@@ -191,6 +283,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num25_k += 1;
+                saveInt("num25_k", num25_k);
             }
         });
 
@@ -204,6 +298,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num20_k += 1;
+                saveInt("num20_k", num20_k);
             }
         });
 
@@ -217,6 +313,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num15_k += 1;
+                saveInt("num15_k", num15_k);
             }
         });
 
@@ -230,6 +328,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num10_k += 1;
+                saveInt("num10_k", num10_k);
             }
         });
 
@@ -243,6 +343,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num5_0_k += 1;
+                saveInt("num5_0_k", num5_0_k);
             }
         });
 
@@ -256,6 +358,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num2_5_k += 1;
+                saveInt("num2_5_k", num2_5_k);
             }
         });
 
@@ -269,6 +373,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num2_0_k += 1;
+                saveInt("num2_0_k", num2_0_k);
             }
         });
 
@@ -282,6 +388,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num1_5_k += 1;
+                saveInt("num1_5_k", num1_5_k);
             }
         });
 
@@ -295,6 +403,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num1_0_k += 1;
+                saveInt("num1_0_k", num1_0_k);
             }
         });
 
@@ -308,6 +418,8 @@ public class Calculator extends AppCompatActivity {
                 weight = Math.round(weight * 100.0)/100.0;
                 pounds.setText(weight + " LBS");
                 kilograms.setText(weightKG + " KGS");
+                num0_5_k += 1;
+                saveInt("num0_5_k", num0_5_k);
             }
         });
 
@@ -318,12 +430,57 @@ public class Calculator extends AppCompatActivity {
                 LayoutInflater inflater = (LayoutInflater) myContext.getSystemService(LAYOUT_INFLATER_SERVICE);
                 ViewGroup popupView = (ViewGroup) inflater.inflate(R.layout.pop_up, null);
 
-                myPopUpWindow = new PopupWindow(popupView, 800, 600, true);
+                // For getting height and width of screen
+                DisplayMetrics dm = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(dm);
+                int width = dm.widthPixels;
+                int height = dm.heightPixels;
+
+                // Pop up window height and width
+                myPopUpWindow = new PopupWindow(popupView, (int) (width * .8),
+                                               (int) (height * .7), true);
+
 
                 // Elevate popup window
                 if (Build.VERSION.SDK_INT >= 21) {
                     myPopUpWindow.setElevation(5.0f);
                 }
+
+                // All of the text views
+                TextView text45L = (TextView) popupView.findViewById(R.id.num45l);
+                TextView text35L = (TextView) popupView.findViewById(R.id.num35l);
+                TextView text25L = (TextView) popupView.findViewById(R.id.num25l);
+                TextView text10L = (TextView) popupView.findViewById(R.id.num10l);
+                TextView text5_0L = (TextView) popupView.findViewById(R.id.num5_0l);
+                TextView text2_5L = (TextView) popupView.findViewById(R.id.num2_5l);
+                TextView text25K = (TextView) popupView.findViewById(R.id.num25k);
+                TextView text20K = (TextView) popupView.findViewById(R.id.num20k);
+                TextView text15K = (TextView) popupView.findViewById(R.id.num15k);
+                TextView text10K = (TextView) popupView.findViewById(R.id.num10k);
+                TextView text5_0K = (TextView) popupView.findViewById(R.id.num5_0k);
+                TextView text2_5K = (TextView) popupView.findViewById(R.id.num2_5k);
+                TextView text2_0K = (TextView) popupView.findViewById(R.id.num2_0k);
+                TextView text1_5K = (TextView) popupView.findViewById(R.id.num1_5k);
+                TextView text1_0K = (TextView) popupView.findViewById(R.id.num1_0k);
+                TextView text0_5K = (TextView) popupView.findViewById(R.id.num0_5k);
+
+                // Setting text views
+                text45L.setText(getInt("num45_l"));
+                text35L.setText(getInt("num35_l"));
+                text25L.setText(getInt("num25_l"));
+                text10L.setText(getInt("num10_l"));
+                text5_0L.setText(getInt("num5_0_l"));
+                text2_5L.setText(getInt("num2_5_l"));
+                text25K.setText(getInt("num25_k"));
+                text20K.setText(getInt("num20_k"));
+                text15K.setText(getInt("num15_k"));
+                text10K.setText(getInt("num10_k"));
+                text5_0K.setText(getInt("num5_0_k"));
+                text2_5K.setText(getInt("num2_5_k"));
+                text2_0K.setText(getInt("num2_0_k"));
+                text1_5K.setText(getInt("num1_5_k"));
+                text1_0K.setText(getInt("num1_0_k"));
+                text0_5K.setText(getInt("num0_5_k"));
 
                 // To let window actually show
                 myPopUpWindow.showAtLocation(constraintLayout, Gravity.CENTER, 0, 0);

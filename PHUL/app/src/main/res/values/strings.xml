@@ -31,6 +31,9 @@
     <string name="Lbs35">35l</string>
     <string name="Lbs25">25l</string>
     <string name="Lbs10">10l</string>
-    <string name="Lbs5">5.0L</string>
+    <string name="Lbs5">5.0l</string>
     <string name="Lbs2_5">2.5l</string>
+    <string name="pounds">Pounds</string>
+    <string name="kilograms">Kilograms</string>
+    <string name="zero">0</string>
 </resources>
