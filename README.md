@@ -7,12 +7,15 @@ This is an android application for tracking workouts by day, specifically for [P
 
 ### Example Application Features ###
 Main View: 
+
 ![alt text](https://github.com/mbartido/PHUL/blob/master/screenshots/main.png "Main View")
 
 Day Tracker:
+
 ![alt text](https://github.com/mbartido/PHUL/blob/master/screenshots/tracking.png "Tracker")
 
 Weight Calculator:
+
 ![alt text](https://github.com/mbartido/PHUL/blob/master/screenshots/weightCalc.png "Weight Calculator")
 
 
